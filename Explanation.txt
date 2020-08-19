@@ -1,0 +1,71 @@
+Given an Android 3x3 key lock screen and two integers m and n, where 1 ≤ m ≤ n ≤ 9, count the total number of unlock patterns of the Android lock screen,
+which consist of minimum of m keys and maximum n keys.
+Rules for a valid pattern:
+Each pattern must connect at least m keys and at most n keys.
+All the keys must be distinct.
+If the line connecting two consecutive keys in the pattern passes through any other keys, the other keys must have previously selected in the pattern. 
+No jumps through non selected key is allowed.
+The order of keys used matters.
+
+https://leetcode.com/static/images/problemset/android-unlock.png
+
+| 1 | 2 | 3 |
+| 4 | 5 | 6 |
+| 7 | 8 | 9 |
+Invalid move: 4 - 1 - 3 - 6
+Line 1 - 3 passes through key 2 which had not been selected in the pattern.
+
+Invalid move: 4 - 1 - 9 - 2
+Line 1 - 9 passes through key 5 which had not been selected in the pattern.
+
+Valid move: 2 - 4 - 1 - 3 - 6
+Line 1 - 3 is valid because it passes through key 2, which had been selected in the pattern
+
+Valid move: 6 - 5 - 4 - 1 - 9 - 2
+Line 1 - 9 is valid because it passes through key 5, which had been selected in the pattern.
+
+Input Description:
+n and m as integers as input.(1<n<m<100).
+
+Output Description:
+Print the count the total number of unlock patterns of the Android lock screen,
+which consist of minimum of m keys and maximum n keys.
+
+Sample Input:
+2 3
+
+Sample Output:
+376
+
+Explanation:
+Check for the rules given in question.
+
+Sample Input:
+3 1
+
+Sample Output:
+0
+
+Sample Input:
+1 3
+
+Sample Output:
+385
+
+Sample Input:
+4 5
+
+Sample Output:
+8776
+
+Sample Input:
+5 6
+
+Sample Output:
+33168
+
+Sample Input:
+3 6
+
+Sample Output:
+35112
